@@ -1,0 +1,80 @@
+@use "/sass/abstracts/variables";
+@use "/sass/abstracts/mixins";
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: variables.$nav-background-color;
+  align-items: center;
+  @include mixins.bp-small {
+    flex-direction: column;
+    align-items: flex-start;
+    .navbar-links {
+      width: 100%;
+      display: none;
+    }
+  }
+
+  .home a {
+    text-decoration: none;
+    color: variables.$link-color;
+    display: block;
+    padding: 1rem;
+    font-size: 2rem;
+  }
+  ul {
+    display: flex;
+    gap: 2rem;
+    @include mixins.bp-small {
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+    }
+  }
+  li {
+    list-style: none;
+    &:hover {
+      text-decoration: underline;
+      background-color: hotpink;
+    }
+    @include mixins.bp-small {
+      width: 100%;
+      text-align: center;
+      &:active {
+        display: flex;
+      }
+    }
+  }
+
+  li a {
+    text-decoration: none;
+    color: variables.$link-color;
+    display: block;
+    padding: 1rem;
+    @include mixins.bp-small {
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  @include mixins.bp-small {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  width: 31px;
+  height: 21px;
+
+  .bar {
+    height: 3px;
+    width: 100%;
+    background-color: hotpink;
+    border-radius: 10px;
+  }
+}
