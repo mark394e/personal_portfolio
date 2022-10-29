@@ -2,11 +2,18 @@
 @use "/sass/abstracts/mixins";
 
 nav {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: variables.$nav-background-color;
+  background: variables.$nav-background;
   align-items: center;
-  padding: 0.5rem;
+  padding: 1rem 0 0 0;
+
+  .navbar-links {
+    width: 40%;
+  }
+
   @include mixins.bp-small {
     flex-direction: column;
     align-items: flex-start;
@@ -16,31 +23,43 @@ nav {
     }
     .navbar-links.active {
       display: flex;
-      border-top: 1px solid #434343;
+      background-color: variables.$display-font-color;
+      gap: 2rem;
     }
+  }
+
+  .navbar-underline {
+    display: flex;
+    justify-items: center;
+    width: 1200px;
+    border-bottom: 1px solid black;
+    position: absolute;
+    top: 90px;
   }
 
   .home a {
     text-decoration: none;
-    color: variables.$link-color;
+    color: variables.$display-font-color;
     display: block;
-    margin-left: 1rem;
-    font-size: 2rem;
+    margin-left: 2rem;
+    font-size: 3rem;
+    font-family: variables.$display-font-family;
   }
   ul {
     display: flex;
-    gap: 2rem;
+    justify-content: space-around;
     @include mixins.bp-small {
       flex-direction: column;
-      gap: 0;
+      gap: 0.75rem;
       width: 100%;
+      padding: 0.75rem;
     }
   }
   li {
     list-style: none;
     &:hover {
       text-decoration: underline;
-      background-color: hotpink;
+      background-color: variables.$display-font-color;
     }
     @include mixins.bp-small {
       width: 100%;
@@ -49,6 +68,7 @@ nav {
   }
 
   li a {
+    font-family: variables.$link-font;
     text-decoration: none;
     color: variables.$link-color;
     display: block;
@@ -70,14 +90,13 @@ nav {
     justify-content: space-between;
     align-self: center;
   }
-
   width: 31px;
   height: 21px;
 
   .bar {
     height: 3px;
     width: 100%;
-    background-color: hotpink;
+    background-color: variables.$display-font-color;
     border-radius: 10px;
   }
 }
