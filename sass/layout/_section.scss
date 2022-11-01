@@ -59,9 +59,62 @@
   }
 }
 
-.work {
-  scroll-margin-top: 76px;
-  scroll-snap-align: start;
+.projects {
+  @include mixins.bp-large {
+    scroll-margin-top: 76px;
+    scroll-snap-align: start;
+    display: grid;
+    grid-template-columns: 150px 1fr 1fr 50px 1fr 1fr 150px;
+    grid-template-rows: 80px 1fr 1fr 80px;
+  }
   height: 800px;
   border-bottom: 1px solid variables.$display-font-color;
+
+  h2 {
+    font-family: variables.$display-font-family;
+    color: variables.$display-font-color;
+    font-size: 2rem;
+    @include mixins.bp-large {
+      grid-column: 2/4;
+      grid-row: 1/2;
+      place-self: end center;
+    }
+  }
+
+  h3 {
+    font-family: variables.$link-font;
+    font-weight: variables.$link-font-weight-reg;
+    font-size: 1.5rem;
+    color: variables.$display-font-color;
+  }
+
+  p {
+    font-family: variables.$link-font;
+    font-weight: variables.$link-font-weight-thin;
+    color: variables.$display-font-color;
+  }
+
+  .project-wrapper {
+    grid-column: 2/4;
+    grid-row: 2/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .side-images {
+    grid-column: 5/7;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    grid-row: 2/4;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+.contact {
+  height: 800px;
+  scroll-snap-align: start;
+  scroll-margin-top: 76px;
 }

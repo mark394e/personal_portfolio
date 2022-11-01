@@ -83,7 +83,7 @@ nav {
     font-family: variables.$link-font;
     font-weight: variables.$link-font-weight-thin;
     text-decoration: none;
-    color: variables.$link-color;
+    color: variables.$display-font-color;
     display: block;
     padding: 1rem;
     @include mixins.bp-small {
