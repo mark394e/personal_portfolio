@@ -23,7 +23,16 @@
     color: variables.$display-font-color;
     font-family: variables.$link-font;
     font-weight: variables.$link-font-weight-light;
-    line-height: 1.25rem;
+    line-height: 1.55rem;
+    a {
+      text-decoration: none;
+      color: variables.$display-font-color;
+      font-family: variables.$link-font;
+      font-weight: variables.$link-font-weight-bold;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
     @include mixins.bp-large {
       grid-column: 5/7;
       padding: 2rem 0 0 2rem;
