@@ -56,6 +56,9 @@ nav {
     margin-left: 2rem;
     font-size: 3rem;
     font-family: variables.$display-font-family;
+    &:hover {
+      transform: scale(1.025);
+    }
   }
   ul {
     display: flex;
@@ -70,8 +73,7 @@ nav {
   li {
     list-style: none;
     &:hover {
-      text-decoration: underline;
-      background-color: variables.$display-font-color;
+      transform: scale(1.2);
     }
     @include mixins.bp-small {
       width: 100%;
