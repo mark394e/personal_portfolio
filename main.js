@@ -7,8 +7,6 @@ const toggleBtn = document.querySelector(".toggle-btn");
 
 const navbarLinks = document.querySelector(".navbar-links");
 
-const header = document.querySelector("#header");
-
 toggleBtn.addEventListener("click", () => {
   navbarLinks.classList.toggle("active");
 });
@@ -17,7 +15,7 @@ toggleBtn.addEventListener("click", () => {
 const myScrollTimeline = new ScrollTimeline({
   source: document.scrollingElement,
   orientation: "block",
-  scrollOffsets: [new CSSUnitValue(0, "percent"), new CSSUnitValue(100, "percent")],
+  scrollOffsets: [new CSSUnitValue(0, "vw"), new CSSUnitValue(100, "vw")],
 });
 
 const properties2 = {

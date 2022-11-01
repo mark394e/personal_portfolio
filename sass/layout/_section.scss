@@ -8,6 +8,7 @@
     display: grid;
     grid-template-columns: 150px 1fr 1fr 50px 1fr 1fr 150px;
     grid-template-rows: 80px 1fr 1fr 80px;
+    scroll-margin-top: 76px;
     scroll-snap-align: start;
   }
   h2 {
@@ -59,6 +60,7 @@
 }
 
 .work {
+  scroll-margin-top: 76px;
   scroll-snap-align: start;
   height: 800px;
   border-bottom: 1px solid variables.$display-font-color;
