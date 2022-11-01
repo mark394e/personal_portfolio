@@ -1,0 +1,51 @@
+@use "/sass/abstracts/variables";
+@use "/sass/abstracts/mixins";
+
+.intro {
+  height: 800px;
+  border-bottom: 1px solid variables.$display-font-color;
+  @include mixins.bp-large {
+    display: grid;
+    grid-template-columns: 150px 1fr 1fr 50px 1fr 1fr 150px;
+    grid-template-rows: 100px 1fr 1fr 100px;
+  }
+  h2 {
+    font-family: variables.$display-font-family;
+    color: variables.$display-font-color;
+    @include mixins.bp-large {
+      grid-column: 5/7;
+      grid-row: 1/2;
+      place-self: end;
+      font-size: 2rem;
+    }
+  }
+  .intro-txt {
+    color: variables.$display-font-color;
+    font-family: variables.$link-font;
+    font-weight: variables.$link-font-weight-light;
+    line-height: 1.25rem;
+    @include mixins.bp-large {
+      grid-column: 5/7;
+      padding: 2rem 0 0 2rem;
+      grid-row: 2/4;
+    }
+  }
+  .portrait {
+    @include mixins.bp-large {
+      grid-column: 2/4;
+      grid-row: 2/4;
+      place-self: center;
+      width: 370px;
+      padding-top: 2rem;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
+
+.work {
+  height: 800px;
+}

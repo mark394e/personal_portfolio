@@ -10,6 +10,18 @@ nav {
   align-items: center;
   padding: 1rem 0 0 0;
 
+  @include mixins.bp-large {
+    .progressbar {
+      width: 100vw;
+      height: 0.2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform-origin: 0 50%;
+      z-index: 1;
+    }
+  }
+
   .navbar-links {
     width: 40%;
   }
@@ -69,6 +81,7 @@ nav {
 
   li a {
     font-family: variables.$link-font;
+    font-weight: variables.$link-font-weight-thin;
     text-decoration: none;
     color: variables.$link-color;
     display: block;

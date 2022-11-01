@@ -1,5 +1,7 @@
 @import url("https://use.typekit.net/ynl2flq.css");
 
+$body-color: #19191b;
+
 $nav-background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6460784997592788) 100%);
 
 $display-font-family: nitti-typewriter-cameo, sans-serif;
@@ -7,5 +9,9 @@ $display-font-weight: 400;
 $display-font-style: normal;
 $display-font-color: #f7620c;
 
-$link-font: montserrat, sans-serif;
-$link-color: rgb(67, 67, 67);
+$link-font: elza, sans-serif;
+$link-font-weight-thin: 100;
+$link-font-weight-light: 300;
+$link-font-weight-reg: 400;
+$link-font-weight-bold: 700;
+$link-color: #19191b;

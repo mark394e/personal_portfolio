@@ -1,8 +1,5 @@
+@use "/sass/base/reset";
+@use "/sass/layout/body";
 @use "sass/layout/nav";
 @use "/sass/layout/header";
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@use "/sass/layout/section";
