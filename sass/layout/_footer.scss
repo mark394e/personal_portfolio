@@ -1,0 +1,65 @@
+@use "/sass/abstracts/variables";
+@use "/sass/abstracts/mixins";
+
+/* Footer */
+footer {
+  @include mixins.bp-large {
+    flex-wrap: wrap;
+    padding: 7vh 4rem;
+  }
+  display: flex;
+  padding: 7vh 2rem;
+  justify-content: space-between;
+  background-color: variables.$footer-color;
+  color: variables.$display-font-color;
+
+  h3 {
+    font-family: variables.$link-font;
+    color: variables.$display-font-color;
+    font-weight: variables.$link-font-weight-bold;
+    padding-bottom: 0.5rem;
+    font-size: 1.777rem;
+  }
+
+  .social-link {
+    line-height: 1.55rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 0.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: variables.$display-font-color;
+    font-family: variables.$link-font;
+    font-weight: variables.$link-font-weight-light;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:visited {
+      color: #f7620c;
+    }
+  }
+
+  p {
+    font-family: variables.$link-font;
+    line-height: 2rem;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  section {
+    display: flex;
+    max-width: 50vw;
+    align-items: top;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  section div {
+    margin: 0px 1rem 1rem 1rem;
+  }
+}

@@ -32,6 +32,9 @@ nav {
     .navbar-links {
       width: 100%;
       display: none;
+      li a {
+        color: #19191b;
+      }
     }
     .navbar-links.active {
       display: flex;
@@ -53,8 +56,15 @@ nav {
     text-decoration: none;
     color: variables.$display-font-color;
     display: block;
-    margin-left: 2rem;
-    font-size: 3rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    height: 50px;
+    @include mixins.bp-large {
+      font-size: 3rem;
+      margin-left: 2rem;
+    }
+
     font-family: variables.$display-font-family;
     &:hover {
       transform: scale(1.025);
@@ -104,6 +114,9 @@ nav {
     flex-direction: column;
     justify-content: space-between;
     align-self: center;
+    transform: scale(1.5);
+    margin-top: 1.25rem;
+    margin-right: 0.5rem;
   }
   width: 31px;
   height: 21px;

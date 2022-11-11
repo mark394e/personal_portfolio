@@ -2,14 +2,12 @@
 @use "/sass/abstracts/mixins";
 
 .intro {
-  height: 800px;
   border-bottom: 1px solid variables.$display-font-color;
   @include mixins.bp-large {
+    height: 800px;
     display: grid;
     grid-template-columns: 150px 1fr 1fr 50px 1fr 1fr 150px;
     grid-template-rows: 80px 1fr 1fr 80px;
-    scroll-margin-top: 76px;
-    scroll-snap-align: start;
   }
   h2 {
     font-family: variables.$display-font-family;
@@ -61,13 +59,12 @@
 
 .projects {
   @include mixins.bp-large {
-    scroll-margin-top: 76px;
-    scroll-snap-align: start;
     display: grid;
     grid-template-columns: 150px 1fr 1fr 50px 1fr 1fr 150px;
     grid-template-rows: 80px 1fr 1fr 80px;
+    height: 800px;
   }
-  height: 800px;
+
   border-bottom: 1px solid variables.$display-font-color;
 
   h2 {
@@ -82,7 +79,7 @@
   }
 
   h3 {
-    font-family: variables.$link-font;
+    font-family: variables.$title-font-family;
     font-weight: variables.$link-font-weight-reg;
     font-size: 1.5rem;
     color: variables.$display-font-color;
@@ -114,7 +111,7 @@
 }
 
 .contact {
-  height: 800px;
-  scroll-snap-align: start;
-  scroll-margin-top: 76px;
+  @include mixins.bp-large {
+    height: 800px;
+  }
 }
