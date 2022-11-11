@@ -2,12 +2,14 @@
 @use "/sass/abstracts/mixins";
 
 header {
-  background-image: url("/images/enhanced_shinjuku_park.webp");
+  // background-image: url("/images/enhanced_shinjuku_park.webp");
+  background-image: url("/images/cropped_shinjuku_park.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   @include mixins.bp-small {
     height: 600px;
+    background-position: 37%;
   }
   height: 670px;
   display: grid;

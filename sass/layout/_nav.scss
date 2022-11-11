@@ -9,6 +9,7 @@ nav {
   background: variables.$nav-background;
   align-items: center;
   padding: 0.5rem 0 0 0;
+  z-index: 1;
 
   @include mixins.bp-large {
     .progressbar {
