@@ -115,6 +115,7 @@
     // border-top: solid 1px variables.$display-font-color;
     text-decoration: none;
     color: black;
+    padding-bottom: 0.5rem;
   }
 
   // .marquee:last-of-type {
@@ -170,13 +171,30 @@
 }
 
 #contact {
-  height: 800px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding-bottom: 2rem;
+
   h2 {
     font-family: variables.$display-font-family;
     color: variables.$display-font-color;
     padding: 3rem 0 1rem 0;
+    align-self: center;
+  }
+  p {
+    font-family: variables.$link-font;
+    color: variables.$display-font-color;
+    padding: 0 2rem 1rem 2rem;
+    a {
+      text-decoration: none;
+      color: variables.$display-font-color;
+      font-weight: variables.$link-font-weight-bold;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    svg {
+      color: variables.$display-font-color;
+    }
   }
 }
