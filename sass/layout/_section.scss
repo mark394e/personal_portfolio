@@ -2,7 +2,9 @@
 @use "/sass/abstracts/mixins";
 
 .intro {
-  border-bottom: 1px solid variables.$display-font-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @include mixins.bp-large {
     height: 800px;
     display: grid;
@@ -12,6 +14,7 @@
   h2 {
     font-family: variables.$display-font-family;
     color: variables.$display-font-color;
+    padding: 1rem 0 1rem 0;
     @include mixins.bp-large {
       grid-column: 5/7;
       grid-row: 1/2;
@@ -24,6 +27,8 @@
     font-family: variables.$link-font;
     font-weight: variables.$link-font-weight-light;
     line-height: 1.55rem;
+
+    padding: 0.5rem 2rem 0rem 2rem;
     p {
       padding-top: 0.5rem;
     }
@@ -43,11 +48,15 @@
     }
   }
   .portrait {
+    order: 2;
+    padding: 2rem 3rem 3rem 3rem;
     @include mixins.bp-large {
       grid-column: 2/4;
       grid-row: 1/4;
       place-self: center;
       width: 370px;
+      order: unset;
+      padding: unset;
     }
     img {
       max-width: 100%;
@@ -58,23 +67,91 @@
 }
 
 .projects {
-  @include mixins.bp-large {
-    display: grid;
-    grid-template-columns: 150px 1fr 1fr 50px 1fr 1fr 150px;
-    grid-template-rows: 80px 1fr 1fr 80px;
-    height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .cursorImage {
+    z-index: 10;
+    position: fixed;
+    pointer-events: none;
+    display: none;
+    background-image: none;
+    border-radius: 0;
+    height: 300px;
+    width: 260px;
+    background-repeat: no-repeat;
+    transition: background-image 200ms ease-out;
+    opacity: 100%;
+    background-size: contain;
+    filter: drop-shadow(0 0 10px black);
+    transform: translate(10%, -50%);
   }
 
-  border-bottom: 1px solid variables.$display-font-color;
+  .content h3 {
+    font-size: 2rem;
+    @include mixins.bp-large {
+      font-size: 5rem;
+    }
+  }
+
+  .content p {
+    font-size: 0.75rem;
+    @include mixins.bp-large {
+      font-size: 1.5rem;
+    }
+  }
+
+  .container {
+    padding: 0 !important;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .marquee {
+    display: flex;
+    white-space: nowrap;
+    gap: variables.$marqueeGap;
+    overflow: hidden;
+    // border-top: solid 1px variables.$display-font-color;
+    text-decoration: none;
+    color: black;
+  }
+
+  // .marquee:last-of-type {
+  //   border-bottom: solid 2px black;
+  // }
+
+  /* Hastighed */
+  .marquee:nth-child(odd) div {
+    animation: marquee 20s linear infinite;
+  }
+
+  /* Hastighed + forskydning */
+  .marquee:nth-child(even) div {
+    animation: marquee 20s linear -5s infinite;
+  }
+
+  .marquee p,
+  .marquee h3 {
+    display: inline-block;
+    margin: 0;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(calc(-100% - variables.$marqueeGap), 0, 0);
+    }
+  }
 
   h2 {
     font-family: variables.$display-font-family;
     color: variables.$display-font-color;
-    font-size: 2rem;
+    padding: 0 0 1rem 0;
     @include mixins.bp-large {
-      grid-column: 2/4;
-      grid-row: 1/2;
-      place-self: end center;
+      font-size: 2rem;
     }
   }
 
@@ -90,28 +167,16 @@
     font-weight: variables.$link-font-weight-thin;
     color: variables.$display-font-color;
   }
-
-  .project-wrapper {
-    grid-column: 2/4;
-    grid-row: 2/4;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-
-  .side-images {
-    grid-column: 5/7;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    grid-row: 2/4;
-    justify-content: space-around;
-    align-items: center;
-  }
 }
 
-.contact {
-  @include mixins.bp-large {
-    height: 800px;
+#contact {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    font-family: variables.$display-font-family;
+    color: variables.$display-font-color;
+    padding: 3rem 0 1rem 0;
   }
 }
