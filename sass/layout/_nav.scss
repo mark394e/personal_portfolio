@@ -2,6 +2,88 @@
 @use "/sass/abstracts/mixins";
 
 nav {
+  .menu-btn {
+    display: none;
+    position: absolute;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .menu-btn_burger {
+    width: 50px;
+    height: 6px;
+    background: variables.$display-font-color;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .menu-btn_burger::before,
+  .menu-btn_burger::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: variables.$display-font-color;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .menu-btn_burger::before {
+    transform: translateY(-16px);
+  }
+
+  .menu-btn_burger::after {
+    transform: translateY(16px);
+  }
+
+  /* Burgermenu ANIMATION */
+
+  .menu-btn.open .menu-btn_burger {
+    background: transparent;
+  }
+
+  .menu-btn.open .menu-btn_burger::before {
+    transform: rotate(45deg);
+  }
+
+  .menu-btn.open .menu-btn_burger::after {
+    transform: rotate(-45deg);
+  }
+
+  @include mixins.bp-small {
+    .menu-btn {
+      display: flex;
+      align-self: flex-end;
+    }
+
+    .navbar-links {
+      width: 100%;
+    }
+
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .navbar-links ul {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .navbar-links li {
+      text-align: center;
+    }
+
+    .navbar-links.active {
+      display: flex;
+    }
+  }
+
   position: fixed;
   width: 100%;
   display: flex;
@@ -10,18 +92,6 @@ nav {
   align-items: center;
   padding: 0.5rem 0 0 0;
   z-index: 1;
-
-  @include mixins.bp-large {
-    .progressbar {
-      width: 100vw;
-      height: 0.2rem;
-      position: fixed;
-      top: 0;
-      left: 0;
-      transform-origin: 0 50%;
-      z-index: 1;
-    }
-  }
 
   .navbar-links {
     width: 40%;
@@ -32,7 +102,8 @@ nav {
     align-items: flex-start;
     .navbar-links {
       width: 100%;
-      display: none;
+      transform: translateX(400px);
+      transition: all 0.5s ease-in-out;
       li a {
         color: #19191b;
       }
@@ -41,6 +112,7 @@ nav {
       display: flex;
       background-color: variables.$display-font-color;
       gap: 2rem;
+      transform: translateX(0px);
     }
   }
 
@@ -65,11 +137,7 @@ nav {
       font-size: 3rem;
       margin-left: 2rem;
     }
-
     font-family: variables.$display-font-family;
-    &:hover {
-      transform: scale(1.025);
-    }
   }
   ul {
     display: flex;
@@ -84,7 +152,8 @@ nav {
   li {
     list-style: none;
     &:hover {
-      transform: scale(1.2);
+      text-decoration: underline;
+      color: variables.$display-font-color;
     }
     @include mixins.bp-small {
       width: 100%;

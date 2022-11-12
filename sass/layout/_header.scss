@@ -11,7 +11,7 @@ header {
     height: 600px;
     background-position: 37%;
   }
-  height: 670px;
+  height: 760px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -25,4 +25,32 @@ header {
   //   text-align: right;
   //   display: none;
   // }
+
+  .scroll-arrow {
+    grid-column: 2/4;
+    grid-row: 4/5;
+    justify-self: center;
+    align-self: end;
+    color: variables.$display-font-color;
+  }
+
+  .bounce {
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
 }
