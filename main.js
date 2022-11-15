@@ -26,18 +26,15 @@ document.querySelectorAll(".navbar-links a").forEach((a) => {
 });
 
 const arrow = document.querySelector(".scroll-arrow");
-const aboutMePage = document.querySelector("#about-me");
 
-arrow.addEventListener("click", scrollArrowDown);
-
-function scrollArrowDown() {
+arrow.addEventListener("click", () => {
   console.log("scroll event");
-  aboutMePage.scrollTo({
+  window.scrollTo({
     top: 450,
     left: 450,
     behavior: "smooth",
   });
-}
+});
 
 // ------------------------- image on hover effect ------------------------------
 let cursorImage = document.querySelector(".cursorImage");
