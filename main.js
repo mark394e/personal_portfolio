@@ -53,7 +53,7 @@ document.querySelectorAll(".marquee").forEach((e, index) => {
   e.addEventListener("mouseover", function (a) {
     cursorImage.style.display = "block";
     // cursorImage.style.backgroundImage = `url("https://picsum.photos/id/${index * 12}/300/260")`;
-    cursorImage.style.backgroundImage = `url(images/${e.dataset.image}.png)`;
+    cursorImage.style.backgroundImage = `url(../images/${e.dataset.image}.png)`;
   });
   e.addEventListener("mouseleave", () => {
     cursorImage.style.backgroundImage = "none";
