@@ -1,13 +1,4 @@
 import "./style.scss";
-import "https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js";
-
-// // const toggleBtn = document.querySelector(".toggle-btn");
-
-// const navbarLinks = document.querySelector(".navbar-links");
-
-// toggleBtn.addEventListener("click", () => {
-//   navbarLinks.classList.toggle("active");
-// });
 
 // ------------------------- burger menu ------------------------------
 const menuBtn = document.querySelector(".menu-btn");
@@ -33,6 +24,20 @@ document.querySelectorAll(".navbar-links a").forEach((a) => {
     menuOpen = false;
   });
 });
+
+const arrow = document.querySelector(".scroll-arrow");
+const aboutMePage = document.querySelector("#about-me");
+
+arrow.addEventListener("click", scrollArrowDown);
+
+function scrollArrowDown() {
+  console.log("scroll event");
+  aboutMePage.scrollTo({
+    top: 450,
+    left: 450,
+    behavior: "smooth",
+  });
+}
 
 // ------------------------- image on hover effect ------------------------------
 let cursorImage = document.querySelector(".cursorImage");
