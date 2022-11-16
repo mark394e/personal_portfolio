@@ -2,7 +2,6 @@
 @use "/sass/abstracts/mixins";
 
 header {
-  // background-image: url("/images/enhanced_shinjuku_park.webp");
   background-image: url("/images/cropped_shinjuku_park.webp");
   background-repeat: no-repeat;
   background-position: center;
@@ -15,17 +14,6 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  // h1 {
-  //   font-family: variables.$display-font-family;
-  //   color: variables.$display-font-color;
-  //   grid-column: 2/4;
-  //   grid-row: 2/4;
-  //   place-self: center;
-  //   font-size: 4.209rem;
-  //   text-align: right;
-  //   display: none;
-  // }
-
   .scroll-arrow {
     grid-column: 2/4;
     grid-row: 4/5;

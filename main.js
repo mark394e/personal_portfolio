@@ -25,6 +25,7 @@ document.querySelectorAll(".navbar-links a").forEach((a) => {
   });
 });
 
+// ------------------------- nav and arrow scroll animation ------------------------------
 const main = document.querySelector("main");
 const arrow = document.querySelector(".scroll-arrow");
 const navLinkData = document.querySelectorAll("[data-action='nav-link']").forEach((navLink) =>
@@ -35,8 +36,8 @@ const navLinkData = document.querySelectorAll("[data-action='nav-link']").forEac
     if (link === "about-me") {
       if (mobil_viewport.matches) {
         main.scrollTo({
-          top: 550,
-          left: 550,
+          top: 600,
+          left: 600,
           behavior: "smooth",
         });
       } else {
@@ -49,8 +50,8 @@ const navLinkData = document.querySelectorAll("[data-action='nav-link']").forEac
     } else if (link === "work") {
       if (mobil_viewport.matches) {
         main.scrollTo({
-          top: 1900,
-          left: 1900,
+          top: 1975,
+          left: 1975,
           behavior: "smooth",
         });
       } else {
@@ -63,14 +64,28 @@ const navLinkData = document.querySelectorAll("[data-action='nav-link']").forEac
     } else if (link === "contact") {
       if (mobil_viewport.matches) {
         main.scrollTo({
-          top: 2325,
-          left: 2325,
+          top: 2350,
+          left: 2350,
           behavior: "smooth",
         });
       } else {
         main.scrollTo({
           top: 2270,
           left: 2270,
+          behavior: "smooth",
+        });
+      }
+    } else if (link === "home") {
+      if (mobil_viewport.matches) {
+        main.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+      } else {
+        main.scrollTo({
+          top: 0,
+          left: 0,
           behavior: "smooth",
         });
       }
@@ -82,8 +97,8 @@ arrow.addEventListener("click", () => {
   let mobil_viewport = window.matchMedia("(max-width: 800px)");
   if (mobil_viewport.matches) {
     main.scrollTo({
-      top: 550,
-      left: 550,
+      top: 600,
+      left: 600,
       behavior: "smooth",
     });
   } else {
