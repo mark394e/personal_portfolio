@@ -136,6 +136,8 @@ nav {
     @include mixins.bp-large {
       font-size: 3rem;
       margin-left: 2rem;
+      height: unset;
+      margin-top: 0;
     }
     font-family: variables.$display-font-family;
   }
@@ -155,6 +157,7 @@ nav {
       text-decoration: underline;
       color: variables.$display-font-color;
     }
+    cursor: pointer;
     @include mixins.bp-small {
       width: 100%;
       text-align: center;

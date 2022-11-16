@@ -25,15 +25,74 @@ document.querySelectorAll(".navbar-links a").forEach((a) => {
   });
 });
 
+const main = document.querySelector("main");
 const arrow = document.querySelector(".scroll-arrow");
+const navLinkData = document.querySelectorAll("[data-action='nav-link']").forEach((navLink) =>
+  navLink.addEventListener("click", (event) => {
+    const link = event.target.dataset.link;
+    console.log(link);
+    let mobil_viewport = window.matchMedia("(max-width: 800px)");
+    if (link === "about-me") {
+      if (mobil_viewport.matches) {
+        main.scrollTo({
+          top: 550,
+          left: 550,
+          behavior: "smooth",
+        });
+      } else {
+        main.scrollTo({
+          top: 670,
+          left: 670,
+          behavior: "smooth",
+        });
+      }
+    } else if (link === "work") {
+      if (mobil_viewport.matches) {
+        main.scrollTo({
+          top: 1900,
+          left: 1900,
+          behavior: "smooth",
+        });
+      } else {
+        main.scrollTo({
+          top: 1470,
+          left: 1470,
+          behavior: "smooth",
+        });
+      }
+    } else if (link === "contact") {
+      if (mobil_viewport.matches) {
+        main.scrollTo({
+          top: 2325,
+          left: 2325,
+          behavior: "smooth",
+        });
+      } else {
+        main.scrollTo({
+          top: 2270,
+          left: 2270,
+          behavior: "smooth",
+        });
+      }
+    }
+  })
+);
 
 arrow.addEventListener("click", () => {
-  console.log("scroll event");
-  window.scrollTo({
-    top: 450,
-    left: 450,
-    behavior: "smooth",
-  });
+  let mobil_viewport = window.matchMedia("(max-width: 800px)");
+  if (mobil_viewport.matches) {
+    main.scrollTo({
+      top: 550,
+      left: 550,
+      behavior: "smooth",
+    });
+  } else {
+    main.scrollTo({
+      top: 670,
+      left: 670,
+      behavior: "smooth",
+    });
+  }
 });
 
 // ------------------------- image on hover effect ------------------------------

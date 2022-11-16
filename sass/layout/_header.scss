@@ -8,7 +8,7 @@ header {
   background-position: center;
   background-size: cover;
   @include mixins.bp-small {
-    height: 600px;
+    height: 680px;
     background-position: 37%;
   }
   height: 760px;
@@ -48,10 +48,10 @@ header {
       transform: translateY(0);
     }
     40% {
-      transform: translateY(-30px);
+      transform: translateY(-15px);
     }
     60% {
-      transform: translateY(-15px);
+      transform: translateY(-7.5px);
     }
   }
 }
